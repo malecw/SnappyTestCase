@@ -3,7 +3,7 @@
 SnappyTestCase
 ======
 
-iOS Simulator type agnostic snapshot testing, built on top of the [FBSnapshotTestCase](https://github.com/facebook/ios-snapshot-test-case).
+iOS Simulator type agnostic snapshot testing, built on top of the [iOSSnapshotTestCase (previously named FBSnapshotTestCase)](https://github.com/uber/ios-snapshot-test-case/).
 
 Why?
 ----
