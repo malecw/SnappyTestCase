@@ -36,12 +36,33 @@ public struct DeviceRack {
             name: "iPhone 5,5\"",
             scale: 3.0
         )
+
+        public static let screen5_8 = DeviceInfo(
+            portraitScreenSize: CGSize(width: 375.0, height: 812.0),
+            name: "iPhone 5,8\"",
+            scale: 3.0
+        )
+
+        public static let screen6_1 = DeviceInfo(
+            portraitScreenSize: CGSize(width: 414.0, height: 896.0),
+            name: "iPhone 6,1\"",
+            scale: 2.0
+        )
+
+        public static let screen6_5 = DeviceInfo(
+            portraitScreenSize: CGSize(width: 414.0, height: 896.0),
+            name: "iPhone 6,5\"",
+            scale: 3.0
+        )
         
         public static let all: [DeviceInfo] = [
             iPhone.screen3_5,
             iPhone.screen4_0,
             iPhone.screen4_7,
-            iPhone.screen5_5
+            iPhone.screen5_5,
+            iPhone.screen5_8,
+            iPhone.screen6_1,
+            iPhone.screen6_5
         ]
     }
     
@@ -60,17 +81,24 @@ public struct DeviceRack {
             name: "iPad Retina",
             scale: 2.0
         )
-        
-        public static let pro = DeviceInfo(
+
+        public static let proBig = DeviceInfo(
             portraitScreenSize: CGSize(width: 1024.0, height: 1366.0),
-            name: "iPad Retina",
+            name: "iPad Pro Big",
+            scale: 2.0
+        )
+
+        public static let proSmall = DeviceInfo(
+            portraitScreenSize: CGSize(width: 834.0, height: 1112.0),
+            name: "iPad Pro Small",
             scale: 2.0
         )
         
         public static let all: [DeviceInfo] = [
             iPad.nonRetina,
             iPad.retina,
-            iPad.pro
+            iPad.proBig,
+            iPad.proSmall
         ]
     }
 }
