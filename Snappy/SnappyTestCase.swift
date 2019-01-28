@@ -17,7 +17,7 @@ extension FBSnapshotTestCase {
         }
     }
     
-    public func verifyViewSnaps<T: UIView>(_ snaps: [Snap], view: T, container: UIView? = nil, tolerance: CGFloat = 0.0, file: StaticString = #file, line: UInt = #line, beforeSnapshot: ((T, Snap) -> Void)? = nil) {
+    public func verifyViewSnaps<T: UIView>(_ snaps: [Snap], view: T, container: UIView? = nil, tolerance: CGFloat = 0.0, file: StaticString = #file, line: UInt = #line, beforeSnapshot: ((T, Snap) -> Void)? = nil, defaultReferenceDirectory: String = "") {
         let frameView = container == nil ? view : container!
         var errors = [SnapVerifyError]()
         for snap in snaps {
@@ -33,7 +33,8 @@ extension FBSnapshotTestCase {
                 view,
                 identifier: snap.identifier,
                 suffixes: FBSnapshotTestCaseDefaultSuffixes(),
-                tolerance: tolerance
+                tolerance: tolerance,
+                defaultReferenceDirectory: defaultReferenceDirectory
             ) {
                 if recordMode {
                     msg = "Test ran in record mode. Reference image is now saved. Disable record mode to perform an actual snapshot comparison!"

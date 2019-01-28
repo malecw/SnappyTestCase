@@ -1,23 +1,27 @@
 PODS:
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
+  - iOSSnapshotTestCase (3.0.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 3.0.0)
+  - iOSSnapshotTestCase/Core (3.0.0)
+  - iOSSnapshotTestCase/SwiftSupport (3.0.0):
+    - iOSSnapshotTestCase/Core
   - SnappyTestCase (0.1.0):
-    - FBSnapshotTestCase (~> 2.1.4)
+    - iOSSnapshotTestCase (~> 3.0)
 
 DEPENDENCIES:
   - SnappyTestCase (from `..`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - iOSSnapshotTestCase
+
 EXTERNAL SOURCES:
   SnappyTestCase:
-    :path: ..
+    :path: ".."
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  SnappyTestCase: 649294c67a049a29b7c5d6e84dc93372b49be187
+  iOSSnapshotTestCase: 23984ffe05289728d646cbb6a7a10b4fb1c93440
+  SnappyTestCase: 578d973bbb04ae07ceabe7b24b837174ed0f9ad1
 
-PODFILE CHECKSUM: f61dbe1db59789fc562d84c15d21f60cfca1ee1b
+PODFILE CHECKSUM: 183fb71d419f5dcee336b8e5c495fef9af6abfc2
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.5.3
