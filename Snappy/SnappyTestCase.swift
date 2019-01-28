@@ -17,12 +17,22 @@ extension FBSnapshotTestCase {
         }
     }
     
-    public func verifyViewSnaps<T: UIView>(_ snaps: [Snap], view: T, container: UIView? = nil, tolerance: CGFloat = 0.0, file: StaticString = #file, line: UInt = #line, beforeSnapshot: ((T, Snap) -> Void)? = nil, defaultReferenceDirectory: String = "") {
+    public func verifyViewSnaps<T: UIView>(_ snaps: [Snap],
+                                           view: T,
+                                           container: UIView? = nil,
+                                           tolerance: CGFloat = 0.0,
+                                           file: StaticString = #file,
+                                           line: UInt = #line,
+                                           beforeSnapshot: ((T, Snap) -> Void)? = nil,
+                                           performOrientationChange: Bool = true,
+                                           defaultReferenceDirectory: String = "") {
         let frameView = container == nil ? view : container!
         var errors = [SnapVerifyError]()
         for snap in snaps {
             UIScreen.main.setValue(snap.scale, forKeyPath:"scale")
-            UIDevice.current.setValue(snap.deviceOrientation.rawValue, forKeyPath:"orientation")
+            if performOrientationChange {
+                UIDevice.current.setValue(snap.deviceOrientation.rawValue, forKeyPath:"orientation")
+            }
             
             frameView.frame.size = snap.frameSize
             frameView.layoutIfNeeded()
