@@ -16,6 +16,18 @@ extension FBSnapshotTestCase {
             return "\(message) (\(snaps.map { $0.identifier }.joined(separator: ", ")))"
         }
     }
+
+    typealias DeviceSettings = (scale: CGFloat, orientation: Int)
+
+    private func readDeviceSettings() -> DeviceSettings {
+        return (scale: UIScreen.main.scale,
+                orientation: UIDevice.current.orientation.rawValue)
+    }
+
+    private func restoreDeviceSettings(_ settings: DeviceSettings) {
+        UIScreen.main.setValue(settings.scale, forKeyPath:"scale")
+        UIDevice.current.setValue(settings.orientation, forKeyPath:"orientation")
+    }
     
     public func verifyViewSnaps<T: UIView>(_ snaps: [Snap],
                                            view: T,
@@ -26,6 +38,11 @@ extension FBSnapshotTestCase {
                                            beforeSnapshot: ((T, Snap) -> Void)? = nil,
                                            performOrientationChange: Bool = true,
                                            defaultReferenceDirectory: String = "") {
+        let settings = readDeviceSettings()
+        defer {
+            restoreDeviceSettings(settings)
+        }
+
         let frameView = container == nil ? view : container!
         var errors = [SnapVerifyError]()
         for snap in snaps {
