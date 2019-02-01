@@ -1,11 +1,11 @@
 PODS:
-  - iOSSnapshotTestCase (4.0.1):
-    - iOSSnapshotTestCase/SwiftSupport (= 4.0.1)
-  - iOSSnapshotTestCase/Core (4.0.1)
-  - iOSSnapshotTestCase/SwiftSupport (4.0.1):
+  - iOSSnapshotTestCase (5.0.2):
+    - iOSSnapshotTestCase/SwiftSupport (= 5.0.2)
+  - iOSSnapshotTestCase/Core (5.0.2)
+  - iOSSnapshotTestCase/SwiftSupport (5.0.2):
     - iOSSnapshotTestCase/Core
   - SnappyTestCase (0.1.0):
-    - iOSSnapshotTestCase (~> 4.0)
+    - iOSSnapshotTestCase (~> 5.0)
 
 DEPENDENCIES:
   - SnappyTestCase (from `..`)
@@ -19,8 +19,8 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  iOSSnapshotTestCase: f3b2b7e606fe03fdbe49af84316bd235df32dc44
-  SnappyTestCase: 7b858ae3019762f7f639a3355a17beeda648848c
+  iOSSnapshotTestCase: 2d51aa06775e95cecb0a1fb9c5c159ccd1dd4596
+  SnappyTestCase: 1c44afef571eb1dcb4d0e0fa7cbf32f93ef3d289
 
 PODFILE CHECKSUM: 183fb71d419f5dcee336b8e5c495fef9af6abfc2
 

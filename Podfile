@@ -6,7 +6,7 @@ target 'SnappyTestCase' do
   use_frameworks!
 
   # Pods for Snappy
-    pod 'iOSSnapshotTestCase', '~> 4.0'
+    pod 'iOSSnapshotTestCase', '~> 5.0'
 
   target 'SnappyTestCaseTests' do
     inherit! :search_paths

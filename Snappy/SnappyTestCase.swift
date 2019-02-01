@@ -32,7 +32,8 @@ extension FBSnapshotTestCase {
     public func verifyViewSnaps<T: UIView>(_ snaps: [Snap],
                                            view: T,
                                            container: UIView? = nil,
-                                           tolerance: CGFloat = 0.0,
+                                           perPixelTolerance: CGFloat = 0.0,
+                                           overallTolerance: CGFloat = 0.0,
                                            file: StaticString = #file,
                                            line: UInt = #line,
                                            beforeSnapshot: ((T, Snap) -> Void)? = nil,
@@ -61,7 +62,8 @@ extension FBSnapshotTestCase {
                 view,
                 identifier: snap.identifier,
                 suffixes: FBSnapshotTestCaseDefaultSuffixes(),
-                tolerance: tolerance,
+                perPixelTolerance: perPixelTolerance,
+                overallTolerance: overallTolerance,
                 defaultReferenceDirectory: defaultReferenceDirectory,
                 defaultImageDiffDirectory: defaultImageDiffDirectory
             ) {
