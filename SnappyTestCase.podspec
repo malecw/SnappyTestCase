@@ -8,10 +8,10 @@ Pod::Spec.new do |s|
     s.homepage          = "https://github.com/tooploox/SnappyTestCase"
     s.license           = "Apache 2.0"
     s.author            = 'Tooploox'
-    s.platform          = :ios, "9.0"
+    s.platform          = :ios, "10.0"
     s.source            = { :git => "https://github.com/tooploox/SnappyTestCase.git",
                             :tag => s.version.to_s }
     s.source_files      = 'Snappy/*.{swift}'
     s.frameworks        = 'XCTest', 'UIKit','Foundation'
-    s.dependency "iOSSnapshotTestCase", "~> 5.0"
+    s.dependency "iOSSnapshotTestCase", "~> 6.0"
 end
