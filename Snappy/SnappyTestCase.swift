@@ -37,7 +37,8 @@ extension FBSnapshotTestCase {
                                            line: UInt = #line,
                                            beforeSnapshot: ((T, Snap) -> Void)? = nil,
                                            performOrientationChange: Bool = true,
-                                           defaultReferenceDirectory: String = "") {
+                                           defaultReferenceDirectory: String = "",
+                                           defaultImageDiffDirectory: String = "") {
         let settings = readDeviceSettings()
         defer {
             restoreDeviceSettings(settings)
@@ -61,7 +62,8 @@ extension FBSnapshotTestCase {
                 identifier: snap.identifier,
                 suffixes: FBSnapshotTestCaseDefaultSuffixes(),
                 tolerance: tolerance,
-                defaultReferenceDirectory: defaultReferenceDirectory
+                defaultReferenceDirectory: defaultReferenceDirectory,
+                defaultImageDiffDirectory: defaultImageDiffDirectory
             ) {
                 if recordMode {
                     msg = "Test ran in record mode. Reference image is now saved. Disable record mode to perform an actual snapshot comparison!"
